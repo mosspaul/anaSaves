@@ -1,0 +1,25 @@
+body {
+    background-color: azure;
+}
+
+
+.top {
+    height: 10vh;
+    width: 100vw;
+}
+
+.gameArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameArea > svg {
+    height: auto;
+    width: 80vw;
+}
+
+.scoreboard {
+    height: 40vh;
+    width: 100vw;
+}
