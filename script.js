@@ -1,4 +1,4 @@
-const GAME_AREA = document.querySelector(".gameArea > svg");
+const GAME_AREA = document.querySelector(".gameArea > .field");
 
 function getPosition(e) {
     return {
@@ -12,8 +12,8 @@ function checkGoal(rect, posObj) {
     w = rect.width + 100;
     let goal = false;
 
-    if ((w * 0.375) <= posObj.x && posObj.x <= (w * 0.675)) {
-        if ((h * 0.175) <= posObj.y && posObj.y <= (h * 0.525)) {
+    if ((w * 0.46) <= posObj.x && posObj.x <= (w * 0.675)) {
+        if ((h * 0.325) <= posObj.y && posObj.y <= (h * 0.525)) {
             goal = true;
         }
     }
@@ -22,11 +22,6 @@ function checkGoal(rect, posObj) {
 
 GAME_AREA.addEventListener("click", pos => {
     let rect = GAME_AREA.getBoundingClientRect();
-    console.log(checkGoal(rect, getPosition(pos)));
-
+    let goal = checkGoal(rect, getPosition(pos));
+    console.log(`${goal ? "Goal" : "Missed"}`);
 });
-
-/* 
-    width: 3/8 - [2/8] - 3/8
-    height: 240 --- 7/40 - [10/40] - 23/40
-*/

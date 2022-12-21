@@ -14,11 +14,27 @@ body {
     justify-content: center;
 }
 
-.gameArea > svg {
+.field{
     height: auto;
     width: 80vw;
 }
 
+.ana {
+    height: 10vh;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    top: 27%;
+    right: 50%;
+}
+.ball {
+    height: 7vh;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    top: 62%;
+    right: 50%;
+}
 .scoreboard {
     height: 40vh;
     width: 100vw;
