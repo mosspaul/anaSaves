@@ -1,7 +1,16 @@
 body {
     background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+@font-face {
+    font-family: 'wedgieregular';
+    src: url('wedgie.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 .top {
     height: 10vh;
@@ -10,29 +19,33 @@ body {
 
 .gameArea {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.field{
-    height: auto;
-    width: 80vw;
+    height: 50vw;
+    width: 100vw;
+    background-image: url(assets/images/Background.svg);
 }
 
 .ana {
-    height: 10vh;
-    width: auto;
-    position: absolute;
-    top: 27%;
+    height: auto;
+    width: 7vw;
+    position: relative;
+    top: -8%;
 }
 
 .ball {
-    height: 7vh;
+    height: 5vw;
     width: auto;
-    position: absolute;
-    top: 62%;
+    position: relative;
+    top: 33%;
 }
 .scoreboard {
     height: 40vh;
     width: 100vw;
+}
+
+.text {
+    font-family: 'wedgieregular';
+    font-size: larger;
 }
