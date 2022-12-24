@@ -2,6 +2,7 @@ const GAME_AREA = document.querySelector(".gameArea");
 const ANA = document.querySelector(".ana");
 const BALL = document.querySelector(".ball");
 const TEXT = document.querySelector(".text");
+const SCOREBOARD = document.querySelector(".scoreboard");
 
 function getPosition(e) {
     return {
@@ -66,11 +67,20 @@ function getRandomInt(min, max) {
 }
 let i = 0;
 
+
 GAME_AREA.addEventListener("click", play);
 
 function play(pos) {
     if (i >= 4) {
         GAME_AREA.removeEventListener("click", play);
+        let button = document.createElement("button");
+        button.textContent = "Play Again";
+        SCOREBOARD.appendChild(button);
+        button.addEventListener("click", () => {
+            i = 0;
+            GAME_AREA.addEventListener("click", play);
+            SCOREBOARD.removeChild(button);
+        });
     }
     let center = moveAna(`${getRandomInt(-60, 60)}deg`, `${getRandomInt(-10, 10)}vw`, `${getRandomInt(0, -4)}vw`);
     let rect = GAME_AREA.getBoundingClientRect();
@@ -107,3 +117,7 @@ function play(pos) {
     }
     i++;
 }
+const ANA_FUT = document.createElement("img");
+ANA_FUT.setAttribute("src", "assets/images/anafut.png");
+ANA_FUT.setAttribute("class", "fut");
+SCOREBOARD.appendChild(ANA_FUT);
