@@ -12,12 +12,12 @@ function getPosition(e) {
 
 function checkGoal(rect, posObj) {
     // checks if the clicked area is in the goal
-    h = rect.height + 100;
-    w = rect.width + 100;
+    h = rect.height;
+    w = rect.width;
     let goal = false;
 
-    if ((w * 0.33) <= posObj.x && posObj.x <= (w * 0.55)) {
-        if ((h * 0.325) <= posObj.y && posObj.y <= (h * 0.525)) {
+    if ((w * 0.33) <= posObj.x && posObj.x <= (w * 0.625)) {
+        if ((h * 0.325) <= posObj.y && posObj.y <= (h * 0.54)) {
             goal = true;
         }
     }
@@ -79,28 +79,31 @@ function play(pos) {
     moveBall(target, rect);
     let goal = checkGoal(rect, target);
     if (goal) {
-        if (target.x + 50 > center.x && target.x - 50 < center.x) {
-            if (target.y + 100 > center.y && target.y - 100 < center.y) {
-                text = "BLOCKED";
+        if (target.x * 1.2 > center.x && target.x * -1.2 < center.x) {
+            if (target.y * 1.3 > center.y && target.y * -1.3 < center.y) {
+                text = "BLOCKED\n";
             }
             else {
-                text = "GOAL";
+                text = "GOAL\n";
             }
         }
         else {
-            text = "GOAL";
+            text = "GOAL\n";
         }
     }
     else {
-        text = "MISSED";
+        text = "MISSED\n";
     }
     setTimeout(reset, 3000);
     function reset() {
         moveAna("0deg", "0vw", "0vw");
         BALL.style.top = "33%";
         BALL.style.left = "0%";
-        text = "";
+        TEXT.textContent = "";
     }
-    TEXT.textContent = text;
+    setTimeout(printOut, 1000);
+    function printOut() {
+        TEXT.textContent = text;
+    }
     i++;
 }

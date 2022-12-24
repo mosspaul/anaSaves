@@ -1,21 +1,14 @@
 body {
-    background-color: azure;
+    background-image: linear-gradient(rgb(42, 33, 33), rgb(42, 33, 33));
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 @font-face {
-    font-family: 'wedgieregular';
-    src: url('wedgie.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
-
+    font-family: 'alfa';
+    src: url(assets/AlfaSlabOne-Regular.ttf);
 }
 
-.top {
-    height: 10vh;
-    width: 100vw;
-}
 
 .gameArea {
     display: flex;
@@ -43,9 +36,12 @@ body {
 .scoreboard {
     height: 40vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 .text {
-    font-family: 'wedgieregular';
-    font-size: larger;
+    font-family: 'alfa';
+    font-size: 70pt;
+    color: lightgray;
 }
