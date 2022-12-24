@@ -89,8 +89,8 @@ function play(pos) {
     moveBall(target, rect);
     let goal = checkGoal(rect, target);
     if (goal) {
-        if (target.x * 1.2 > center.x && target.x * -1.2 < center.x) {
-            if (target.y * 1.3 > center.y && target.y * -1.3 < center.y) {
+        if (target.x + (rect.width/15) > center.x && target.x -(rect.width/15) < center.x) {
+            if (target.y + (rect.height/15)> center.y && target.y -(rect.height/15) < center.y) {
                 text = "BLOCKED\n";
             }
             else {
