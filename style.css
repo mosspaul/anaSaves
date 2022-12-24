@@ -52,7 +52,7 @@ button {
     font-family: 'alfa';
     font-size: 18pt;
     color: lightgray;
-    width: 10vw;
+    width: 30vw;
     height: auto;
     background-color: transparent;
     border: 2px solid lightgray;
@@ -62,4 +62,5 @@ button {
     height: 25vh;
     width: auto;
     margin-bottom: 3em;
+    margin-top: 3em;
 }
