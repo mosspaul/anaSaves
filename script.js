@@ -66,7 +66,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
 let i = 0;
-
+let goalCount = 0;
 
 GAME_AREA.addEventListener("click", play);
 
@@ -75,10 +75,20 @@ function play(pos) {
         GAME_AREA.removeEventListener("click", play);
         let button = document.createElement("button");
         button.textContent = "Play Again";
+        let p = document.createElement("p");
+        if (goalCount >= 3) {
+            p.textContent = "You won";
+        }
+        else {
+            p.textContent = "You lost";
+        }
+        SCOREBOARD.appendChild(p);
+        button.textContent = "Play Again";
         SCOREBOARD.appendChild(button);
         button.addEventListener("click", () => {
             i = 0;
             GAME_AREA.addEventListener("click", play);
+            p.textContent = "";
             SCOREBOARD.removeChild(button);
         });
     }
@@ -95,10 +105,12 @@ function play(pos) {
             }
             else {
                 text = "GOAL\n";
+                goalCount ++;
             }
         }
         else {
             text = "GOAL\n";
+            goalCount ++;
         }
     }
     else {
